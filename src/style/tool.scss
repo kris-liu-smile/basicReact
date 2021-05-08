@@ -1,0 +1,7 @@
+//  根元素 设置 的是16px 基于1600px  设计图实现  
+// 屏幕时 100vw  100份   每份 1600/100 = 16px = 1vw
+// 默认字体是 style/index   $fontSize-root 设置的16px
+// 倒着推算   16px($fontSize-root) / 16px（每份的) * 1vw   就能推算出html  默认字体  为 1vw
+//  根元素
+$fontSize-root: 16px !default; // 1
+$fontSize-base: 1rem !default; // 2

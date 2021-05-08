@@ -1,0 +1,97 @@
+@mixin DisplayStyle($a, $b, $c) {
+    display: flex;
+    flex-direction: $a;
+    align-items: $b;
+    justify-content: $c;
+}
+
+@mixin setRadius($width, $height, $radius, $border) {
+    height: remCalc($width);
+    width: remCalc($height);
+    border-radius: remCalc($radius);
+    border: $border;
+}
+
+// @mixin set
+
+@function stripUnit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+// scss-lint:disable ZeroUnit
+@function pxToRem($value, $base-value: $fontSize-base) {
+    //  转换成rem
+    $value: stripUnit($value) / stripUnit($base-value) * 1rem;
+    @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+    @return $value;
+}
+
+// length 传入了多少个值 
+// append 插入在列表中，  并且处于最末尾
+// 参考 https://www.sass.hk/skill/sass26.html
+@function remCalc($values, $base-value: $fontSize-root) {
+
+    $max: length($values);
+
+    @if $max == 1 { @return pxToRem(nth($values, 1), $base-value); }
+
+    $remValues: ();
+
+    @for $i from 1 through $max {
+        $remValues: append($remValues, pxToRem(nth($values, $i), $base-value));
+    }
+
+    @return $remValues;
+}
+
+
+// 盒子
+@mixin square($width,$height) {
+    height: remCalc($width);
+    width: remCalc($height);
+}
+
+// 圆圈
+@mixin circle($size) {
+    @include square($size);
+    border-radius: remCalc($size);
+}
+
+// 垂直剧中
+@mixin verticalPositionMiddle($position: "relative") {
+
+    @if $position == "relative" {
+
+        position: relative;
+
+    }
+    @else if $position == "absolute" {
+
+        position: absolute;
+
+    }
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// 垂直水平剧中
+@mixin verticalLevelPositionMiddle($position: "relative") {
+
+    @if $position == "relative" {
+
+        position: relative;
+
+    }
+    @else if $position == "absolute" {
+
+        position: absolute;
+
+    }
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+

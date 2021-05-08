@@ -1,0 +1,29 @@
+@import '../../../style/index.scss';
+
+.K6_basic_input {
+    @include square(20px, 250px);
+    border-radius: remCalc(5px);
+}
+
+.home_input_container{
+    height: remCalc(100px);
+    @include DisplayStyle(row, center, center)
+}
+
+.home_input_text {
+    @include square(50px, 300px);
+    border-radius: remCalc(10px);
+    font-size: remCalc(20px);
+    text-indent: remCalc(10px);
+    outline: 0;
+}
+
+// .home_input_text:focus-visible {
+//     // border-radius: remCalc(10px);
+//     // outline: 2px solid red;
+//     outline: none;
+// }
+
+.home_input_text:focus {
+    border-color:color($color-orderAwaitingFulfilment);
+}

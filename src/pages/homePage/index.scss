@@ -1,0 +1,44 @@
+@import '../../style/index.scss';
+
+.home_contain {
+    width: remCalc(950px);
+    padding:  remCalc(20px) 0;
+    @include verticalLevelPositionMiddle('absolute');
+    @include DisplayStyle(row, center, flex-start);
+    flex-wrap: wrap;
+
+    @media (min-width:800px)  and (max-width: 1100px){
+        width: remCalc(760px);
+    }
+
+    @media (min-width:550px)  and (max-width: 800px){
+        width: remCalc(570px);
+    }
+
+    @media screen and (max-width: 550px) {
+        width: remCalc(380px);
+    }
+}
+.home_part {
+    cursor: pointer;
+    margin: remCalc(10px);
+    padding: remCalc(10px);
+    @include DisplayStyle(column, center, center);
+    @include setRadius(148px, 148px, 10px,  remCalc(1px) solid $color-grey);
+    box-shadow: remCalc(3px 2px 5px) #333333;
+    // 文字 边缘颜色 
+    // color: color($color-white);
+    // -webkit-text-stroke:  remCalc(1px)  #000000;
+    // 文字 颜色 渐变
+    background: linear-gradient(to right, red, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+    p {
+        padding: remCalc(10px);
+    }
+}
+
+.home_part:hover{
+    transform:scale(1.1);
+    transition-duration: 1s;
+}

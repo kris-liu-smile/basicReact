@@ -1,0 +1,33 @@
+@import '../../style//index.scss';
+
+$herder-height: remCalc(50px);
+
+.layout-header-contain {
+  height: $herder-height;
+  @include DisplayStyle(row,center,center)
+}
+.layout-main {
+  @include DisplayStyle(row,center,flex-start)
+}
+
+.layout-aside-contain {
+  width: remCalc(300px);
+  height: calc(100vh - #{$herder-height});
+  @include DisplayStyle(column,flex-start,flex-start);
+  border-right: 1px solid red;
+  p {
+    // width:calc(100% - remCalc(40px));
+    width: remCalc(260px);
+    height: remCalc(50px);
+    line-height: remCalc(50px);
+    font-size: remCalc(18px);
+    font-weight: 500;
+    padding: remCalc(10px 20px);
+    cursor: pointer;
+  }
+}
+
+.layout-main-contain {
+  flex: 1;
+  // @include DisplayStyle(column,center,center)
+}
