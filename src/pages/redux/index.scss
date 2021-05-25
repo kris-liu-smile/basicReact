@@ -1,0 +1,12 @@
+@import '../../style/index.scss';
+
+.redux-use {
+  .redux-use-value {
+    margin: remCalc(20px  20px);
+    padding: remCalc(20px 20px);
+  }
+  .redux-use-btn button {
+    margin: remCalc(20px 20px);
+    cursor: pointer;
+  }
+}

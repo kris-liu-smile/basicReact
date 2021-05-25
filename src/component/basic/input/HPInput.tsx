@@ -16,7 +16,6 @@ const HPInput = (props: Props) => {
   }, 500);
 
   const onChangeInput = (e: React.ChangeEvent<any>) => {
-    console.log(e.target.value);
     handleInputChange(e.target.value);
   };
 

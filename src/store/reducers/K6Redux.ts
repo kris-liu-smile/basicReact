@@ -2,11 +2,15 @@ import {
     K6_ADDCOUNT,
   } from '../actionTypes'
 
-const initState = {
+export interface initK6reduxState {
+    num: number
+}
+
+const initState: initK6reduxState = {
     num: 0,
 }
 
-const testRedux = (state = initState, action: any) => {
+const K6Redux = (state = initState, action: any) => {
     switch(action.type) {
         case K6_ADDCOUNT:
             return {
@@ -18,4 +22,4 @@ const testRedux = (state = initState, action: any) => {
     }
 }
 
-export default testRedux
+export default K6Redux

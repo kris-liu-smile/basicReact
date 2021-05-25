@@ -1,19 +1,37 @@
-import ReduxClass from '../../pages/redux/reduxClass'
-import ReduxHook from '../../pages/redux/reduxHook'
+import ReduxClass from '../../pages/redux/reduxUse'
+import ReduxHook from '../../pages/redux/reduxUseHook'
+// hook
+import HookBasic from '../../pages/hook/hookBasic'
+import { ReactNode } from 'react'
 
 export const routes: Array<routesProps> = [
   { 
     name: 'redux',
     children: [
       {
-        title: 'classz中redux的使用',
+        title: 'redux的使用',
         component: ReduxClass,
-        path: '/redux/class'
+        path: '/redux/use'
       },
       {
-        title: 'hook中redux的使用',
+        title: 'redux的使用(hook篇)',
         component: ReduxHook,
         path: '/redux/hook'
+      }
+    ]
+  },
+  { 
+    name: 'hook',
+    children: [
+      {
+        title: 'useState,useEffect',
+        component: HookBasic,
+        path: '/hook/basic'
+      },
+      {
+        title: 'useCallback',
+        component: HookBasic,
+        path: '/hook/useCallback'
       }
     ]
   }
@@ -21,7 +39,7 @@ export const routes: Array<routesProps> = [
 
 interface objOf {
   title:  string,
-  component: any,
+  component: ReactNode,
   path: string
 }
 

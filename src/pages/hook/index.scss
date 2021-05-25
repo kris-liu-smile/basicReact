@@ -1,0 +1,12 @@
+@import '../../style/index.scss';
+
+.hook-use {
+  .hook-use-value {
+    margin: remCalc(20px  20px);
+    padding: remCalc(20px 20px);
+  }
+  .hook-use-btn button {
+    margin: remCalc(20px 20px);
+    cursor: pointer;
+  }
+}

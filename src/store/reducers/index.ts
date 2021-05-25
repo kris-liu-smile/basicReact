@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import testRedux from './testRedux'
+import K6Redux from './K6Redux'
 import K6routePermissions from './K6routePermissions'
 
 export default combineReducers({
-    testRedux,
+    K6Redux,
     K6routePermissions
 })

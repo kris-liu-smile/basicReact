@@ -23,7 +23,7 @@ const homePageList = [
     {
         title: 'hook',
         introduce: 'hook,react',
-        path: ''
+        path: '/hook'
     },
     {
         title: 'typescript',

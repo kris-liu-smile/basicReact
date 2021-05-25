@@ -1,30 +1,73 @@
 @import '../../style//index.scss';
 
-$herder-height: remCalc(50px);
+$herder-height: remCalc(80px);
+
+$layout-aside-width: remCalc(300px);
+
+.layout-contain {
+  background: color("greys", 'light');
+  color: color('blacks');
+  min-width: remCalc(1200px)
+}
 
 .layout-header-contain {
   height: $herder-height;
-  @include DisplayStyle(row,center,center)
+  @include DisplayStyle(row,center,flex-start);
+  box-shadow: remCalc(3px 2px 5px) color('greys', 'medium');
+
+  p:nth-child(1) {
+    width: $layout-aside-width;
+    text-align: right;
+    cursor: pointer;
+    span svg{
+      width: remCalc(20px);
+      height: remCalc(20px);
+    }
+  }
+  p:nth-child(2) {  
+    flex: 1;
+    text-align: center;
+  }
+  p:nth-child(3) {
+    width: calc(#{$layout-aside-width} - #{remCalc(20px)});
+    padding: remCalc(0 10px);
+    text-align: right;
+    cursor: pointer;
+  }
+  .layout-header-svg-aside:hover, .layout-header-svg-return:hover {
+    color: color('highlight', 'darker')
+  }
+  .layout-header-svg-return svg {
+    width: remCalc(20px);
+    height: remCalc(20px);
+    cursor: pointer;
+  }
 }
 .layout-main {
-  @include DisplayStyle(row,center,flex-start)
+  @include DisplayStyle(row,flex-start,flex-start)
 }
 
 .layout-aside-contain {
-  width: remCalc(300px);
+  width: $layout-aside-width;
   height: calc(100vh - #{$herder-height});
   @include DisplayStyle(column,flex-start,flex-start);
-  border-right: 1px solid red;
+  border-right: 2px solid color('greys', 'medium');
   p {
-    // width:calc(100% - remCalc(40px));
+    box-shadow: remCalc(0px 1px 2px) color('greys', 'medium');
     width: remCalc(260px);
     height: remCalc(50px);
     line-height: remCalc(50px);
     font-size: remCalc(18px);
-    font-weight: 500;
     padding: remCalc(10px 20px);
     cursor: pointer;
   }
+  P:hover  {
+    color: color('highlight', 'darker')
+  }
+}
+
+.layout-aside-actived {
+  color: color('highlight', 'darker');
 }
 
 .layout-main-contain {

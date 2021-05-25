@@ -1,0 +1,11 @@
+@import '../../style//index.scss';
+
+.summary-contain p {
+    padding: remCalc(10px);
+    color: color('greys');
+}
+
+.summary-contain p:nth-child(1) {
+  font-weight: bold;
+  color: color('blacks');
+}

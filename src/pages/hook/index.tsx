@@ -1,10 +1,10 @@
 import Layout from '../../component/layout'
 
 
-const ReduxLayout = () => {
+const HookLayout = () => {
     return (
         <Layout />
     )
 }
 
-export default ReduxLayout
+export default HookLayout
